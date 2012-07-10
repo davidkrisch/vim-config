@@ -2,11 +2,19 @@ This project is my vim configuration.  I use it for daily development on Mac OS 
 
 # Installation
 
-To use this configuration, back up your existing configuration (`~/.vimrc` and `~/.vim`) and replace with 
-the git configuration.  You'll end up with the base directory of this project in `~/.vim` and `vimrc` in
-`~/.vimrc`
+1. Backup your existing configuration (`~/.vimrc` and `~/.vim`)
+2. Clone the repository
 
-Launch `vim` and run `:BundleInstall`
+        git clone git@github.com:davidkrisch/vim-config.git ~/.vim
+        cp ~/.vim/vimrc ~/.vimrc
+
+3. Sync the Git submodules
+    
+        cd ~/.vim
+        git submodule init
+        git submodule update
+
+4. Launch `vim` and run `:BundleInstall`
 
 ## Plugin Specific Installation
 
