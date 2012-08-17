@@ -30,7 +30,7 @@ endif
 
 " No need to set these
 " The colorscheme is inherited from the emulator colorscheme
-"set background=dark
+set background=light
 "colorscheme solarized
 
 syntax enable
@@ -41,6 +41,10 @@ set scrolloff=5  " Minimim number of screen lines to keep above and below the cu
 set ttyfast      " More characters will be sent to the screen for redrawing
 set laststatus=2 " Always show the status line
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
+set mouse=a      " Enable the mouse in terminal
+
+inoremap jk <Esc>
+inoremap <esc> <nop>
 
 " Use 4 spaces
 set softtabstop=4
@@ -98,3 +102,16 @@ nnoremap <leader>p :YRShow<cr>
 
 " Scratch
 nnoremap <leader><tab> :Sscratch<cr>
+
+" Make it easy to edit .vimrc and source it
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Remap the arrows to no-op
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+" Javascript shortcuts
+autocmd FileType javscript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
