@@ -30,7 +30,11 @@ If you find `-ruby`, you'll need to install a Vim with Ruby support.
     ruby extconf.rb
     make
 
-# Color Scheme
+### Powerline
+
+In iTerm2, set "Report Terminal Type" to "xterm-256color". Preferences -> Profiles -> Terminal -> Report Terminal Type
+
+### Color Scheme
 
 For a Vim colorscheme, I use [Solarized](http://ethanschoonover.com/solarized). I install it as the 
 default colorscheme in iTerm2 and Vim inherits the colorscheme. Installation instructions can be

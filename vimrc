@@ -16,10 +16,14 @@ Bundle 'gmarik/vundle'
 Bundle 'wincent/Command-T'
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'Lokaltog/vim-powerline'
 
 " vim-scripts Repositories
 Bundle 'scratch.vim'
 Bundle 'YankRing.vim'
+Bundle 'JSON.vim'
+Bundle 'snipMate'
 
 filetype plugin indent on " required for Vundle
 
@@ -40,8 +44,13 @@ set undofile
 set scrolloff=5  " Minimim number of screen lines to keep above and below the cursor
 set ttyfast      " More characters will be sent to the screen for redrawing
 set laststatus=2 " Always show the status line
+set encoding=utf-8 " Necessary to show Unicode glyphs
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set mouse=a      " Enable the mouse in terminal
+
+" Powerline Configuration
+let g:Powerline_symbols='fancy'
+set t_Co=256
 
 inoremap jk <Esc>
 inoremap <esc> <nop>
@@ -51,6 +60,10 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
+" Use tabs for Go
+autocmd FileType go
+    \ setlocal noexpandtab
 
 " Indenting 
 set autoindent 
@@ -114,4 +127,5 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 
 " Javascript shortcuts
-autocmd FileType javscript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
+"autocmd FileType javscript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
+au BufRead,BufNewFile *.json set filetype=json
