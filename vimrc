@@ -18,7 +18,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-markdown'
 
 " vim-scripts Repositories
 Bundle 'scratch.vim'
