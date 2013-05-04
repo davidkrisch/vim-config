@@ -25,6 +25,7 @@ Bundle 'scratch.vim'
 Bundle 'YankRing.vim'
 Bundle 'JSON.vim'
 Bundle 'snipMate'
+Bundle 'Markdown'
 
 filetype plugin indent on " required for Vundle
 
@@ -78,7 +79,7 @@ set incsearch
 set showmatch
 set hlsearch
 " Get rid of the previous search
-nnoremap <leader><space> :noh<cr>
+nnoremap <leader><space> :nohlsearch<cr>
 set visualbell " Turn the auditory bell into a visual one
 
 " Status Line
@@ -127,6 +128,9 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
+" Toggle paste mode with \o
+nnoremap <leader>o :set paste!<cr>
+
 " Javascript shortcuts
-"autocmd FileType javscript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
+"autocmd FileType javascript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
 au BufRead,BufNewFile *.json set filetype=json
