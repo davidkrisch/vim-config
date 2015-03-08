@@ -18,18 +18,6 @@ This project is my vim configuration.  I use it for daily development on Mac OS 
 
 ## Plugin Specific Installation
 
-### Command-T
-
-See [this](https://github.com/wincent/Command-T) for a full rundown on Command-T installation.
-
-Quickly, Command-T requires Vim (with Ruby support), Ruby, and a C compiler.  To see if you have 
-Ruby support compiled into vim, execute `vim --version` and make sure `+ruby` is listed somewhere.
-If you find `-ruby`, you'll need to install a Vim with Ruby support.
-
-    cd ~/.vim/bundle/command-t/ruby/command-t
-    ruby extconf.rb
-    make
-
 ### Powerline
 
 In iTerm2, set "Report Terminal Type" to "xterm-256color". Preferences -> Profiles -> Terminal -> Report Terminal Type
