@@ -22,10 +22,6 @@ This project is my vim configuration.  I use it for daily development on Mac OS 
 
 ## Plugin Specific Installation
 
-### Powerline
-
-In iTerm2, set "Report Terminal Type" to "xterm-256color". Preferences -> Profiles -> Terminal -> Report Terminal Type
-
 ### Color Scheme
 
 For a Vim colorscheme, I use [Solarized](http://ethanschoonover.com/solarized). I install it as the

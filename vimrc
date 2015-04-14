@@ -11,7 +11,6 @@ Plugin 'gmarik/Vundle.vim'
 " Github Repositories
 " Plugin 'wincent/Command-T'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'mtth/scratch.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'hallison/vim-markdown'
@@ -45,10 +44,6 @@ set laststatus=2 " Always show the status line
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set mouse=a      " Enable the mouse in terminal
-
-" Powerline Configuration
-let g:Powerline_symbols='fancy'
-set t_Co=256
 
 inoremap jk <Esc>
 inoremap <esc> <nop>
@@ -130,6 +125,7 @@ nnoremap <leader>o :set paste!<cr>
 
 " Javascript shortcuts
 "autocmd FileType javascript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " JSON syntax, error highlighting via JSON.vim
 au! BufRead,BufNewFile *.json set filetype=json
@@ -160,3 +156,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " End remove trailing whitespace
+
+" Copy/Paste
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
