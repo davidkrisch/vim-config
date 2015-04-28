@@ -9,12 +9,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Github Repositories
-" Plugin 'wincent/Command-T'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'hallison/vim-markdown'
 Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-surround'
+Plugin 'itchyny/lightline.vim'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
@@ -43,7 +44,9 @@ set ttyfast      " More characters will be sent to the screen for redrawing
 set laststatus=2 " Always show the status line
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
-set mouse=a      " Enable the mouse in terminal
+set mouse=      " Enable the mouse in terminal
+set autoread     "  Reload changed files if they don't have local changes
+set endofline    " Ensure the last line of the file has an EOL on it
 
 inoremap jk <Esc>
 inoremap <esc> <nop>
@@ -127,6 +130,8 @@ nnoremap <leader>o :set paste!<cr>
 "autocmd FileType javascript :iabbrev <buffer> inspect require('util').inspect(, false, 5)
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+
 " JSON syntax, error highlighting via JSON.vim
 au! BufRead,BufNewFile *.json set filetype=json
 augroup json_autocmd
@@ -160,3 +165,13 @@ autocmd BufWinLeave * call clearmatches()
 " Copy/Paste
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ 'component': {
+    \   'readonly': '%{&readonly?"⭤":""}',
+    \ },
+    \ 'separator': { 'left': '⮀', 'right': '⮂' },
+    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+    \ }
