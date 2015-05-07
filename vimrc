@@ -16,6 +16,7 @@ Plugin 'hallison/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-surround'
 Plugin 'itchyny/lightline.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
@@ -30,11 +31,6 @@ if has("gui_running")
 	set guioptions=egmrt
 endif
 
-" No need to set these
-" The colorscheme is inherited from the emulator colorscheme
-set background=light
-"colorscheme solarized
-
 syntax enable
 set relativenumber " Show line numbers relative to the cursor
 set nowrap
@@ -47,6 +43,11 @@ set backspace=indent,eol,start " Allow backspacing over everything in insert mod
 set mouse=      " Enable the mouse in terminal
 set autoread     "  Reload changed files if they don't have local changes
 set endofline    " Ensure the last line of the file has an EOL on it
+
+" Solarized
+set background=dark
+let g:solarized_termcolors = 256
+colorscheme solarized
 
 inoremap jk <Esc>
 inoremap <esc> <nop>
