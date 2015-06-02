@@ -9,18 +9,17 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Github Repositories
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'itchyny/lightline.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mtth/scratch.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'hallison/vim-markdown'
 Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-surround'
-Plugin 'itchyny/lightline.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdcommenter'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
-Plugin 'JSON.vim'
 Plugin 'snipMate' " for pdb snippet
 
 call vundle#end()
@@ -49,6 +48,7 @@ set background=dark
 let g:solarized_termcolors = 256
 colorscheme solarized
 
+" Use jk to go to normal mode
 inoremap jk <Esc>
 inoremap <esc> <nop>
 
@@ -57,8 +57,6 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set expandtab
-
-autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
 " Indenting
 set autoindent
@@ -111,9 +109,6 @@ let g:ctrlp_map = '<leader>p'
 let g:yankring_min_element_length = 2
 nnoremap <leader>y :YRShow<cr>
 
-" Scratch
-nnoremap <leader><tab> :Sscratch<cr>
-
 " Make it easy to edit .vimrc and source it
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -133,17 +128,20 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
+autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
+
 " JSON syntax, error highlighting via JSON.vim
-au! BufRead,BufNewFile *.json set filetype=json
-augroup json_autocmd
-    autocmd!
-    autocmd FileType json set autoindent
-    autocmd FileType json set formatoptions=tcq2l
-    autocmd FileType json set textwidth=78 shiftwidth=2
-    autocmd FileType json set softtabstop=2 tabstop=8
-    autocmd FileType json set expandtab
-    autocmd FileType json set foldmethod=syntax
-augroup END
+let g:vim_json_syntax_conceal = 0
+"au! BufRead,BufNewFile *.json set filetype=json
+"augroup json_autocmd
+"    autocmd!
+"    autocmd FileType json set autoindent
+"    autocmd FileType json set formatoptions=tcq2l
+"    autocmd FileType json set textwidth=78 shiftwidth=2
+"    autocmd FileType json set softtabstop=2 tabstop=8
+"    autocmd FileType json set expandtab
+"    autocmd FileType json set foldmethod=syntax
+"augroup END
 " END JSON.vim configuration
 
 " Remove trailing whitespace on save
