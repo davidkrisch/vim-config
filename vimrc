@@ -25,6 +25,8 @@ Plugin 'snipMate' " for pdb snippet
 call vundle#end()
 filetype plugin indent on    " required for Vundle
 
+let mapleader = "\<Space>"
+
 " Don't show the toolbar if we're using the gui
 if has("gui_running")
 	set guioptions=egmrt
