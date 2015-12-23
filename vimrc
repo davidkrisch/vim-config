@@ -17,6 +17,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
+"Plugin 'davidhalter/jedi-vim'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
@@ -41,7 +42,7 @@ set ttyfast      " More characters will be sent to the screen for redrawing
 set laststatus=2 " Always show the status line
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
-set mouse=      " Enable the mouse in terminal
+set mouse=a     " Enable the mouse in terminal
 set autoread     "  Reload changed files if they don't have local changes
 set endofline    " Ensure the last line of the file has an EOL on it
 
@@ -89,10 +90,10 @@ set equalalways " Multiple windows, when created, are equal in size
 set splitbelow splitright
 
 " Navigate between Windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h<C-w>_
+nnoremap <C-j> <C-w>j<C-w>_
+nnoremap <C-k> <C-w>k<C-w>_
+nnoremap <C-l> <C-w>l<C-w>_
 
 " Wildmenu completion
 set wildmenu
@@ -129,6 +130,8 @@ nnoremap <leader>o :set paste!<cr>
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype htmldjango setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
