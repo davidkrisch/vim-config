@@ -17,7 +17,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'HerringtonDarkholme/yats.vim'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
@@ -104,6 +105,10 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.pyc                            " Python byte code
 
+" Reselect visual block after indent/outdent visual
+vnoremap < <gv
+vnoremap > >gv
+
 " CtrlP - invoked on Ctrl-T
 let g:ctrlp_map = '<leader>p'
 
@@ -122,7 +127,7 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
-" Toggle paste mode with \o
+" Toggle paste mode
 nnoremap <leader>o :set paste!<cr>
 
 " Javascript shortcuts
@@ -135,19 +140,8 @@ autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
-" JSON syntax, error highlighting via JSON.vim
+" JSON syntax, error highlighting via json.vim
 let g:vim_json_syntax_conceal = 0
-"au! BufRead,BufNewFile *.json set filetype=json
-"augroup json_autocmd
-"    autocmd!
-"    autocmd FileType json set autoindent
-"    autocmd FileType json set formatoptions=tcq2l
-"    autocmd FileType json set textwidth=78 shiftwidth=2
-"    autocmd FileType json set softtabstop=2 tabstop=8
-"    autocmd FileType json set expandtab
-"    autocmd FileType json set foldmethod=syntax
-"augroup END
-" END JSON.vim configuration
 
 " Remove trailing whitespace on save
 fun! <SID>StripTrailingWhitespaces()
@@ -165,10 +159,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " End remove trailing whitespace
-
-" Copy/Paste
-vmap <C-x> :!pbcopy<CR>
-vmap <C-c> :w !pbcopy<CR><CR>
 
 " lightline
 let g:lightline = {
