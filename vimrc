@@ -19,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'dart-lang/dart-vim-plugin'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
@@ -169,3 +170,9 @@ let g:lightline = {
     \ 'separator': { 'left': '⮀', 'right': '⮂' },
     \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
     \ }
+
+" dart plugin
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/dart-vim-plugin
+endif
