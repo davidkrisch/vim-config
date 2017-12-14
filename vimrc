@@ -82,6 +82,10 @@ set visualbell " Turn the auditory bell into a visual one
 set showcmd
 set ruler
 
+" Disable Ex mode
+map q: <Nop>
+nnoremap Q <nop>
+
 " Windowing
 
 " Split Vertically
