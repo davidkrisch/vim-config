@@ -142,6 +142,7 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype htmldjango setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+autocmd Filetype dart setlocal ts=2 sts=2 sw=2
 
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
