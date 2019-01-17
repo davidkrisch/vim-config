@@ -56,6 +56,8 @@ colorscheme solarized
 " Use jk to go to normal mode
 inoremap jk <Esc>
 inoremap <esc> <nop>
+" Fix paste bug triggered by the above inoremaps
+set t_BE=
 
 " Use 4 spaces
 set softtabstop=4
