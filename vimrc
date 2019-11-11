@@ -18,7 +18,7 @@ Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rust-lang/rust.vim'
-Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'HerringtonDarkholme/yats.vim' " TypeScript
 Plugin 'dart-lang/dart-vim-plugin'
 
 " vim-scripts Repositories
@@ -116,7 +116,7 @@ set wildignore+=*.pyc                            " Python byte code
 vnoremap < <gv
 vnoremap > >gv
 
-" CtrlP - invoked on Ctrl-T
+" CtrlP
 let g:ctrlp_map = '<leader>p'
 
 " Yankring
