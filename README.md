@@ -24,21 +24,18 @@ This project is my vim configuration.  I use it for daily development on Mac OS 
 
 ### Color Scheme
 
-For a Vim colorscheme, I use [Solarized](http://ethanschoonover.com/solarized). I install it as the
-default colorscheme in iTerm2 and Vim inherits the colorscheme. Installation instructions can be
-found in the solarized submodule of this repository or
+For a Vim colorscheme, I use [Solarized](http://ethanschoonover.com/solarized).
+I install it as the default colorscheme in iTerm2 and Vim inherits the
+colorscheme. Installation instructions can be found in the solarized submodule
+of this repository or
 [here](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized).
 
-### Patched fonts
+### Patched fonts for vim-airline
 
-For the lightline plugin, we need to install patched fonts. For whatever reason,
-downloading and installing the recommended fonts does not work.  I followed the
-directions to manually patch the fonts
-[here](https://github.com/davidkrisch/vim-powerline/tree/develop/fontpatcher).
+Install patched fonts from [powerline](https://github.com/powerline/fonts).
 
-    cd fonts/firaMono/
-    fontforge -script ../../vim-powerline/fontpatcher/fontpatcher FuraMono-Regular\ Powerline.otf
-
-After the patching is complete, open FontBook and install the newly patched font.
-
-The fonts themselves come from https://github.com/powerline/fonts. I like FiraMono regular.
+Pick a font you like - I like FiraMono regular - and download it. Then right
+click the font in the Downloads folder and select "Open with" and then
+FontBook.  Install the font in FontBook, then choose that font as the default
+in your iTerm2 profile.  After that you should see the fancy triangle shaped
+characters in the status line.

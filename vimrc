@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Github Repositories
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'hallison/vim-markdown'
 Plugin 'pangloss/vim-javascript'
@@ -168,15 +168,9 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " End remove trailing whitespace
 
-" lightline
-let g:lightline = {
-    \ 'colorscheme': 'solarized',
-    \ 'component': {
-    \   'readonly': '%{&readonly?"⭤":""}',
-    \ },
-    \ 'separator': { 'left': '⮀', 'right': '⮂' },
-    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-    \ }
+" airline status line plugin
+let g:airline_powerline_fonts = 1
+let g:airline_solarized_bg='dark'
 
 " dart plugin
 if has('vim_starting')
