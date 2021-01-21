@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'HerringtonDarkholme/yats.vim' " TypeScript
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'hashivim/vim-terraform'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
