@@ -11,16 +11,11 @@ Plugin 'gmarik/Vundle.vim'
 " Github Repositories
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
-Plugin 'kien/ctrlp.vim'
 Plugin 'hallison/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'rust-lang/rust.vim'
-Plugin 'HerringtonDarkholme/yats.vim' " TypeScript
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'hashivim/vim-terraform'
 
 " vim-scripts Repositories
 Plugin 'YankRing.vim'
@@ -37,6 +32,7 @@ if has("gui_running")
 endif
 
 syntax enable
+set number
 set relativenumber " Show line numbers relative to the cursor
 set nowrap
 set undofile
@@ -107,9 +103,9 @@ nnoremap <C-l> <C-w>l<C-w>_
 " Wildmenu completion
 set wildmenu
 set wildmode=list:longest
-set wildignore+=.hg,.git,.svn,.perforce         " Version control
+set wildignore+=.hg,.git,.svn,.perforce          " Version control
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.sw?,*~                         " Vim swap files
 set wildignore+=*.DS_Store                       " OSX bullshit
 set wildignore+=*.pyc                            " Python byte code
 
@@ -117,8 +113,10 @@ set wildignore+=*.pyc                            " Python byte code
 vnoremap < <gv
 vnoremap > >gv
 
-" CtrlP
-let g:ctrlp_map = '<leader>p'
+" netrw
+let g:netrw_banner = 0 " Remove the banner
+let g:netrw_list_hide = &wildignore  " Obey wildignores
+"let g:netrw_winsize = 25 " 25% split
 
 " Yankring
 " Don't add single character yanks/deletes to ring
@@ -144,9 +142,6 @@ autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype htmldjango setlocal ts=2 sts=2 sw=2
-autocmd Filetype scss setlocal ts=2 sts=2 sw=2
-autocmd Filetype dart setlocal ts=2 sts=2 sw=2
-
 autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 
 " JSON syntax, error highlighting via json.vim
@@ -170,11 +165,4 @@ autocmd BufWinLeave * call clearmatches()
 " End remove trailing whitespace
 
 " airline status line plugin
-let g:airline_powerline_fonts = 1
 let g:airline_solarized_bg='dark'
-
-" dart plugin
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/.vim/bundle/dart-vim-plugin
-endif
